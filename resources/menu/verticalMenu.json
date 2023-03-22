@@ -4,7 +4,7 @@
       "menuHeader": "Menu"
     },
     {
-      "url": "/",
+      "url": "/dashboard",
       "name": "Dashboard",
       "icon": "menu-icon tf-icons bx bx-home-circle",
       "slug": "dashboard-analytics"
@@ -14,6 +14,12 @@
       "icon": "menu-icon tf-icons bx bx-user",
       "slug": "users",
       "url": "/users"
+    },
+    {
+      "name": "Employees",
+      "icon": "menu-icon tf-icons bx bx-smile",
+      "slug": "employees",
+      "url": "/employees"
     },
     {
       "name": "Attendance",
