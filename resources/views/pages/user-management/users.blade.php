@@ -29,18 +29,18 @@
                             <div class="d-flex justify-content-left align-items-center">
                                 <div class="avatar-wrapper">
                                     <div class="avatar avatar-sm me-3">
-                                        <span class="avatar-initial rounded-circle bg-label-primary">{{ substr($user->last_name, 0, 1) . substr($user->first_name, 0, 1) }}</span>
+                                        <span class="avatar-initial rounded-circle bg-label-primary"><i class="bx bx-user bx-xs"></i></span>
                                     </div>
                                 </div>
                                 <div class="d-flex flex-column">
-                                    <a href="app-user-view-account.html" class="text-body text-truncate">
+                                    <a href="#" class="text-body text-truncate">
                                         <span class="fw-semibold">{{ $user->last_name . ', ' . $user->first_name }}</span>
                                     </a>
-                                    <small class="text-muted">{{ $user->email }}</small>
+                                    <a href="mailto:{{ $user->email }}" target="_blank"><small class="text-muted">{{ $user->email }}</small></a>
                                 </div>
                             </div>
                         </td>
-                        <td>{{ '@' . $user->username }}</td>
+                        <td>{{ $user->username }}</td>
                         <td>
                             <span class="text-truncate d-flex align-items-center">
                                 <span class="badge badge-center rounded-pill bg-label-primary w-px-30 h-px-30 me-2">
@@ -51,7 +51,7 @@
                         <td class="text-center">
                             <input class="form-check-input" type="checkbox" disabled {{ $user->is_active ? 'checked' : '' }}>
                         </td>
-                        <td>@prettyDateFormat($user->date_created)</td>
+                        <td>{{ \Carbon\Carbon::parse($user->date_created)->format('M. d, Y H:i:s') }}</td>
                     </tr>
                 @endforeach
             </tbody>

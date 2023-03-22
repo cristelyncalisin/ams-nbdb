@@ -1,1 +1,1 @@
-<img src="assets/img/favicon/nbdb-logo.png" alt="NBDB Logo" width="{{ $width }}">
+<img src="/assets/img/favicon/nbdb-logo.png" alt="NBDB Logo" width="{{ $width }}">

@@ -49,7 +49,7 @@ $navbarDetached = ($navbarDetached ?? '');
           <li class="nav-item navbar-dropdown dropdown-user dropdown">
             <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
               <div class="avatar">
-                        <img src="https://ui-avatars.com/api?name={{ urlencode(auth()->user()->first_name . ' ' . auth()->user()->last_name)}}&bold=true&background=0079fb&color=ffffff" alt class="w-px-40 h-auto rounded-circle" />
+                <span class="avatar-initial rounded-circle bg-label-primary"><i class="bx bx-user bx-xs"></i></span>
               </div>
             </a>
             <ul class="dropdown-menu dropdown-menu-end">
@@ -58,7 +58,7 @@ $navbarDetached = ($navbarDetached ?? '');
                   <div class="d-flex">
                     <div class="flex-shrink-0 me-3">
                       <div class="avatar">
-                        <img src="https://ui-avatars.com/api?name={{ urlencode(auth()->user()->first_name . ' ' . auth()->user()->last_name)}}&bold=true&background=0079fb&color=ffffff" alt class="w-px-40 h-auto rounded-circle" />
+                        <span class="avatar-initial rounded-circle bg-label-primary"><i class="bx bx-user bx-xs"></i></span>
                       </div>
                     </div>
                     <div class="flex-grow-1">

@@ -18,7 +18,7 @@
     {
       "name": "Employees",
       "icon": "menu-icon tf-icons bx bx-smile",
-      "slug": "employees",
+      "slug": "employees-index",
       "url": "/employees"
     },
     {
@@ -27,19 +27,24 @@
       "slug": "attendance",
       "submenu": [
         {
-          "url": "/attendance/merge",
-          "name": "Merge Attendance",
+          "url": "/attendance/merged",
+          "name": "Merged Attendance",
           "slug": "attendance-merge"
+        },
+        {
+          "url": "/attendance/gform",
+          "name": "Google Form Extract",
+          "slug": "attendance-gform"
+        },
+        {
+          "url": "/attendance/biometrics",
+          "name": "Biometrics Extract",
+          "slug": "attendance-biometrics"
         },
         {
           "url": "/attendance/dtr",
           "name": "Print DTR",
           "slug": "attendance-dtr"
-        },
-        {
-          "url": "/attendance/reports",
-          "name": "Attendance Reports",
-          "slug": "attendance-reports"
         }
       ]
     }

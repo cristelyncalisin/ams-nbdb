@@ -24,8 +24,6 @@ class AppServiceProvider extends ServiceProvider
    */
   public function boot()
   {
-    Blade::directive('prettyDateFormat', function ($expression) {
-      return "<?php echo \Carbon\Carbon::parse($expression)->format('M. d, Y H:i:s'); ?>";
-    });
+    
   }
 }

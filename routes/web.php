@@ -2,8 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\Authentication\LoginController;
+use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\Dashboard\AnalyticsController;
+use App\Http\Controllers\Authentication\LoginController;
+use App\Http\Controllers\BiometricController;
+use App\Http\Controllers\GFormController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +37,16 @@ Route::middleware(['auth'])->group(function() {
 
     Route::prefix('users')->group(function () {
         Route::get('/', [UserController::class, 'index'])->name('users-index');
+    });
+
+    Route::prefix('employees')->group(function () {
+        Route::get('/', [EmployeeController::class, 'index'])->name('employees-index');
+    });
+
+    Route::prefix('attendance')->group(function () {
+        Route::get('/merged', [AttendanceController::class, 'index'])->name('attendance-merged');
+        Route::get('/gform', [GFormController::class, 'index'])->name('attendance-gform');
+        Route::get('/biometrics', [BiometricController::class, 'index'])->name('attendance-biometrics');
     });
 });
 
