@@ -27,7 +27,7 @@
         },
         {
           "url": "/attendance/dtr",
-          "name": "DTR",
+          "name": "Print DTR",
           "slug": "attendance-dtr"
         },
         {

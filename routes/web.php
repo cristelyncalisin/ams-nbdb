@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\Authentication\LoginController;
 use App\Http\Controllers\Dashboard\AnalyticsController;
 
@@ -30,6 +31,10 @@ Route::middleware(['guest'])->group(function () {
 Route::middleware(['auth'])->group(function() {
     Route::get('/dashboard', [AnalyticsController::class, 'index'])->name('dashboard-analytics');
     Route::get('/logout', [LoginController::class, 'logout'])->name('auth-logout');
+
+    Route::prefix('users')->group(function () {
+        Route::get('/', [UserController::class, 'index'])->name('users.index');
+    });
 });
 
 
