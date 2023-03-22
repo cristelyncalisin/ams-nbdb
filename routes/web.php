@@ -33,7 +33,7 @@ Route::middleware(['auth'])->group(function() {
     Route::get('/logout', [LoginController::class, 'logout'])->name('auth-logout');
 
     Route::prefix('users')->group(function () {
-        Route::get('/', [UserController::class, 'index'])->name('users.index');
+        Route::get('/', [UserController::class, 'index'])->name('users-index');
     });
 });
 
