@@ -23,11 +23,23 @@
           <!-- /Logo -->
           <h5 class="mb-4 text-center"><strong>ATTENDANCE MANAGEMENT</strong></h5>
 
+          @if($errors->first('email'))
+            <div>
+              <div class="alert alert-dark d-flex mb-3" role="alert">
+                <span class="badge badge-center rounded-pill bg-dark border-label-dark p-3 me-2"><i class="bx bx-error-alt fs-6"></i></span>
+                <div class="d-flex flex-column ps-1">
+                  <h6 class="alert-heading d-flex align-items-center fw-bold mb-1">Error!!</h6>
+                  <span>Login Failed! Please try again.</span>
+                </div>
+              </div>
+            </div>
+          @endif
+
           <form id="formAuthentication" class="mb-3" action="{{ route('auth-authenticate') }}" method="POST">
             @csrf
             <div class="mb-3">
               <label for="email" class="form-label">Email / Username</label>
-              <input type="text" class="form-control" id="email" name="email" placeholder="Enter your email or username" autofocus>
+              <input type="text" class="form-control" id="email" name="email" placeholder="Enter your email or username" value="{{old('email')}}" autofocus>
             </div>
             <div class="mb-3 form-password-toggle">
               <div class="d-flex justify-content-between">
