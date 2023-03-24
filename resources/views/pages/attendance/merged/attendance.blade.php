@@ -5,9 +5,6 @@
 @section('content')
 <h4 class="fw-bold py-3 mb-4">
     <span class="text-muted fw-light">Attendance /</span> Merged Attendance
-    <!-- <div class="d-inline-block float-end pt-2">
-        <a href="#" class="btn btn-primary float-end">Print</a>
-    </div> -->
 
     <div class="btn-group d-inline-block float-end" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="left" data-bs-html="true" title="<span>Menu Actions</span>">
         <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -18,7 +15,7 @@
                 <h6 class="dropdown-header">Upload Attendance</h6>
             </li>
             <li><button class="dropdown-item" type="button">Upload from Google Form (.xlsx)</button></li>
-            <li><a class="dropdown-item" href="{{route('attendance-biometrics-create')}}" target="_blank">Upload from Biometrics (.txt)</a></li>
+            <li><a class="dropdown-item" href="{{route('attendance-biometrics-create')}}">Upload from Biometrics (.txt)</a></li>
             <li>
                 <hr class="dropdown-divider">
             </li>
@@ -32,6 +29,16 @@
 </h4>
 
 <!-- Responsive Table -->
+@if(session('success'))
+    <div class="alert alert-primary d-flex" role="alert">
+        <span class="badge badge-center rounded-pill bg-primary border-label-primary p-3 me-2"><i class="bx bx-command fs-6"></i></span>
+        <div class="d-flex flex-column ps-1">
+            <h6 class="alert-heading d-flex align-items-center fw-bold mb-1">Success!</h6>
+            <span>{{ session('success') }}</span>
+        </div>
+    </div>
+@endif
+
 <div class="card">
     <div class="table-responsive text-nowrap" style="min-height: 500px;">
         <table class="table">

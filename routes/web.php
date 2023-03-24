@@ -50,7 +50,8 @@ Route::middleware(['auth'])->group(function() {
         Route::prefix('biometrics')->group(function () {
             Route::get('/', [BiometricController::class, 'index'])->name('attendance-biometrics');
             Route::get('/upload-page', [BiometricController::class, 'create'])->name('attendance-biometrics-create');
-            Route::post('/upload-page', [BiometricController::class, 'store'])->name('attendance-biometrics-store');
+            Route::post('/upload', [BiometricController::class, 'upload'])->name('attendance-biometrics-upload');
+            Route::post('/store', [BiometricController::class, 'store'])->name('attendance-biometrics-store');
         });
     });
 });
