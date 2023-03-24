@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\Dashboard\AnalyticsController;
 use App\Http\Controllers\Authentication\LoginController;
+use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\BiometricController;
 use App\Http\Controllers\GFormController;
 
@@ -46,7 +47,11 @@ Route::middleware(['auth'])->group(function() {
     Route::prefix('attendance')->group(function () {
         Route::get('/merged', [AttendanceController::class, 'index'])->name('attendance-merged');
         Route::get('/gform', [GFormController::class, 'index'])->name('attendance-gform');
-        Route::get('/biometrics', [BiometricController::class, 'index'])->name('attendance-biometrics');
+        Route::prefix('biometrics')->group(function () {
+            Route::get('/', [BiometricController::class, 'index'])->name('attendance-biometrics');
+            Route::get('/upload-page', [BiometricController::class, 'create'])->name('attendance-biometrics-create');
+            Route::post('/upload-page', [BiometricController::class, 'store'])->name('attendance-biometrics-store');
+        });
     });
 });
 

@@ -29,7 +29,7 @@
         {
           "url": "/attendance/merged",
           "name": "Merged Attendance",
-          "slug": "attendance-merge"
+          "slug": "attendance-merged"
         },
         {
           "url": "/attendance/gform",

@@ -14,4 +14,19 @@ class BiometricController extends Controller
             'biometrics' => $biometrics
         ]);
     }
+
+    public function create()
+    {
+        return view('pages.attendance.biometrics.form-biometrics-upload');
+    }
+
+    public function store(Request $request)
+    {
+        if ($request->hasFile('file')) {
+            $file = $request->file('file');
+            $contents = file_get_contents($file->path());
+            // Process the file contents here
+            dd($contents);
+        }
+    }
 }
