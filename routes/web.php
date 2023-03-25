@@ -46,7 +46,14 @@ Route::middleware(['auth'])->group(function() {
 
     Route::prefix('attendance')->group(function () {
         Route::get('/merged', [AttendanceController::class, 'index'])->name('attendance-merged');
-        Route::get('/gform', [GFormController::class, 'index'])->name('attendance-gform');
+        
+        Route::prefix('gforms')->group(function () {
+            Route::get('/', [GFormController::class, 'index'])->name('attendance-gforms');
+            Route::get('/upload-page', [GFormController::class, 'create'])->name('attendance-gforms-create');
+            Route::post('/upload', [GFormController::class, 'upload'])->name('attendance-gforms-upload');
+            Route::post('/store', [GFormController::class, 'store'])->name('attendance-gforms-store');
+        });
+
         Route::prefix('biometrics')->group(function () {
             Route::get('/', [BiometricController::class, 'index'])->name('attendance-biometrics');
             Route::get('/upload-page', [BiometricController::class, 'create'])->name('attendance-biometrics-create');

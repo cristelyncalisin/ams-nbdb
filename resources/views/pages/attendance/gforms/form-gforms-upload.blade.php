@@ -1,6 +1,6 @@
 @extends('layouts/contentNavbarLayout')
 
-@section('title', 'Biometrics Extract')
+@section('title', 'Google Forms Extract')
 
 @section('vendor-style')
 <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />
@@ -8,12 +8,11 @@
 
 @section('content')
 <h5 class="fw-bold py-3 mb-4">
-    <span class="text-muted fw-light">Attendance / Biometrics Extract /</span> Upload Biometrics File (.txt)
+    <span class="text-muted fw-light">Attendance / Google Forms Extract /</span> Upload Google Form Responses (.xlsx)
 </h5>
 
 <div class="card">
     <div class="card-body">
-
         @if(session('error'))
             <div>
                 <div class="alert alert-dark d-flex mb-3 alert-dismissible" role="alert">
@@ -26,8 +25,7 @@
                 </div>
             </div>
         @endif
-        
-        <form method="POST" action="{{ route('attendance-biometrics-store') }}">
+        <form method="POST" action="{{ route('attendance-gforms-store') }}">
             @csrf
             <div class="row">
                 <div class="col-md-12">
@@ -39,13 +37,6 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="dz-message needsclick">
-                Drop files here or click to upload
-            </div>
-            <div class="fallback">
-                <input name="file" type="file" accept="text/plain"/>
-            </div> -->
-
         </form>
     </div>
 </div>
@@ -67,12 +58,12 @@
 
     // Create a FilePond instance
     const pond = FilePond.create(inputElement, {
-        acceptedFileTypes: ['text/plain']
+        acceptedFileTypes: ['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet']
     });
 
     FilePond.setOptions({
         server: {
-            url: "{{ route('attendance-biometrics-upload') }}",
+            url: "{{ route('attendance-gforms-upload') }}",
             headers: {
                 'X-CSRF-TOKEN': '{{ csrf_token() }}'
             }

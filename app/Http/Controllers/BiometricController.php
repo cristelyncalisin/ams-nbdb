@@ -66,16 +66,29 @@ class BiometricController extends Controller
             storage_path('app/biometrics/tmp/' . $file->folder . '/' . $file->filename)
         );
         $lines = explode("\n", $fileContents);
+        
+        if (!str_starts_with($lines[0], 'No')) {
+            return redirect()
+                ->back()
+                ->with('error', 'Invalid Biometrics Raw File!');
+        }
 
         foreach ($lines as $line) {
             if (preg_match('/^(\d+)\t(\d+)\t(\d+)\t([^\t]+)\t(\d+)\t(\d+)\t(.+)$/', $line, $matches)) {
                 $enNo = ltrim($matches[3], '0');
                 $dateTime = $matches[7];
 
-                Biometric::create([
+                $bio_check = Biometric::where([
                     'employee_id' => $enNo,
                     'timestamp' => $dateTime
-                ]);
+                ])->first();
+                
+                if (!$bio_check) {
+                    Biometric::create([
+                        'employee_id' => $enNo,
+                        'timestamp' => $dateTime
+                    ]);
+                }
             }
         }
 

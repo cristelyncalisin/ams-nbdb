@@ -28,18 +28,8 @@
       "submenu": [
         {
           "url": "/attendance/merged",
-          "name": "Merged Attendance",
+          "name": "Attendance Records",
           "slug": "attendance-merged"
-        },
-        {
-          "url": "/attendance/gform",
-          "name": "Google Form Extract",
-          "slug": "attendance-gform"
-        },
-        {
-          "url": "/attendance/biometrics",
-          "name": "Biometrics Extract",
-          "slug": "attendance-biometrics"
         },
         {
           "url": "/attendance/dtr",

@@ -64,11 +64,19 @@
 
                 @empty
                     <tr>
-                        <td colspan="7" class="text-center">No Records Found</td>
+                        <td colspan="8" class="text-center">No Records Found</td>
                     </tr>
                 @endforelse
             </tbody>
         </table>
+    </div>
+    
+    <div class="mx-3 mt-4">
+        <div class="d-flex float-end">
+            @if(count($employees))
+                {{ $employees->links() }}
+            @endif
+        </div>
     </div>
 </div>
 <!--/ Responsive Table -->

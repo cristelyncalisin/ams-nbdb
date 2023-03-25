@@ -19,7 +19,7 @@ return new class extends Migration
                 DATE(time_entry) AS date_entry, 
                 TIME(MIN(time_entry)) AS time_in, 
                 CASE
-                    when MIN(time_entry) = MAX(time_entry) THEN null
+                    when TIME_FORMAT(TIME(MIN(time_entry)), '%h:%i %p') = TIME_FORMAT(TIME(MAX(time_entry)), '%h:%i %p') THEN null
                     else TIME(MAX(time_entry))
                 END AS  time_out,
                 MIN(source) as source
