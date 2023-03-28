@@ -8,6 +8,7 @@ use App\Http\Controllers\Authentication\LoginController;
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\BiometricController;
 use App\Http\Controllers\GFormController;
+use App\Http\Controllers\DTRController;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,6 +60,10 @@ Route::middleware(['auth'])->group(function() {
             Route::get('/upload-page', [BiometricController::class, 'create'])->name('attendance-biometrics-create');
             Route::post('/upload', [BiometricController::class, 'upload'])->name('attendance-biometrics-upload');
             Route::post('/store', [BiometricController::class, 'store'])->name('attendance-biometrics-store');
+        });
+
+        Route::prefix('dtr')->group(function () {
+            Route::get('/', [DTRController::class, 'index'])->name('attendance-dtr');
         });
     });
 });

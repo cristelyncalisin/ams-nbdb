@@ -33,7 +33,7 @@
         },
         {
           "url": "/attendance/dtr",
-          "name": "Print DTR",
+          "name": "DTR",
           "slug": "attendance-dtr"
         }
       ]
