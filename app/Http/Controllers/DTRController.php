@@ -37,17 +37,17 @@ class DTRController extends Controller
     {
         if ((!$request->date_inclusive) && (!$request->division)) {
             return redirect()
-                ->route('attendance-dtr')
+                ->route('attendance-dtr', request()->query())
                 ->with('error', 'Please select a Division and Date Inclusive!');
         }
         if (! $request->date_inclusive) {
             return redirect()
-                ->route('attendance-dtr')
+                ->route('attendance-dtr', request()->query())
                 ->with('error', 'Please select a Date Inclusive!');
         }
         if (! $request->division) {
             return redirect()
-                ->route('attendance-dtr')
+                ->route('attendance-dtr', request()->query())
                 ->with('error', 'Please select a Division!');
         }
 

@@ -11,18 +11,6 @@
     <span class="text-muted fw-light">Attendance /</span> Daily Time Record
 </h4>
 
-<!-- Responsive Table -->
-@if(session('success'))
-<div class="alert alert-primary d-flex alert-dismissible" role="alert">
-    <span class="badge badge-center rounded-pill bg-primary border-label-primary p-3 me-2"><i class="bx bx-command fs-6"></i></span>
-    <div class="d-flex flex-column ps-1">
-        <h6 class="alert-heading d-flex align-items-center fw-bold mb-1">Success!</h6>
-        <span>{{ session('success') }}</span>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-</div>
-@endif
-
 @if(session('error'))
     <div>
         <div class="alert alert-dark d-flex mb-3 alert-dismissible" role="alert">
@@ -36,7 +24,7 @@
     </div>
 @endif
 
-@if (empty($dtr_details))
+@if (empty($dtr_details) && !session('error'))
 <div class="alert alert-primary d-flex" role="alert">
     <span class="badge badge-center rounded-pill bg-primary border-label-primary p-3 me-2"><i class="bx bx-info-circle fs-6"></i></span>
     <div class="d-flex flex-column ps-1">
