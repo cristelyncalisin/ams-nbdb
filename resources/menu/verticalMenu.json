@@ -4,18 +4,6 @@
       "menuHeader": "Menu"
     },
     {
-      "url": "/dashboard",
-      "name": "Dashboard",
-      "icon": "menu-icon tf-icons bx bx-home-circle",
-      "slug": "dashboard-analytics"
-    },
-    {
-      "name": "Users",
-      "icon": "menu-icon tf-icons bx bx-user",
-      "slug": "users-index",
-      "url": "/users"
-    },
-    {
       "name": "Employees",
       "icon": "menu-icon tf-icons bx bx-smile",
       "slug": "employees-index",
@@ -37,6 +25,12 @@
           "slug": "attendance-dtr"
         }
       ]
+    },
+    {
+      "name": "Users",
+      "icon": "menu-icon tf-icons bx bx-user",
+      "slug": "users-index",
+      "url": "/users"
     }
   ]
 }

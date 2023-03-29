@@ -103,8 +103,7 @@ class EmployeeSeeder extends Seeder
                 'last_name' => $last_name,
                 'email' => fake()->unique()->safeEmail(),
                 'division' => Arr::random([ 'BTTD', 'PRED', 'AFSD', 'CITD' ]),
-                'date_hired' => now(),
-                'date_separated' => null,
+                'position' => null,
                 'personnel_type' => 'Plantilla',
                 'is_active' => 1
             ]);
@@ -120,8 +119,7 @@ class EmployeeSeeder extends Seeder
                 'last_name' => $last_name_jo,
                 'email' => fake()->unique()->safeEmail(),
                 'division' => Arr::random([ 'BTTD', 'PRED', 'AFSD', 'CITD' ]),
-                'date_hired' => now(),
-                'date_separated' => null,
+                'position' => null,
                 'personnel_type' => 'COS/JO',
                 'is_active' => 1
             ]);

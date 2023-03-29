@@ -20,8 +20,7 @@ return new class extends Migration
             $table->string('middle_name')->nullable();
             $table->string('last_name');
             $table->string('email');
-            $table->date('date_hired');
-            $table->date('date_separated')->nullable();
+            $table->string('position')->nullable();
             $table->enum('personnel_type', ['Plantilla', 'COS/JO', 'Intern']);
             $table->boolean('is_active');
             $table->timestamps();

@@ -25,11 +25,11 @@
 @endif
 
 @if (empty($dtr_details) && !session('error'))
-<div class="alert alert-primary d-flex" role="alert">
-    <span class="badge badge-center rounded-pill bg-primary border-label-primary p-3 me-2"><i class="bx bx-info-circle fs-6"></i></span>
+<div class="alert alert-dark d-flex" role="alert">
+    <span class="badge badge-center rounded-pill bg-dark border-label-dark p-3 me-2"><i class="bx bx-info-circle fs-6"></i></span>
     <div class="d-flex flex-column ps-1">
         <h6 class="alert-heading d-flex align-items-center fw-bold mb-1">Note:</h6>
-        <span>Select the Date Inclusive and Division first in order to show the DTR Data.</span>
+        <span><strong>DATE INCLUSIVE</strong> and <strong>DIVISION</strong> are required in order to show the DTR Details.</span>
     </div>
 </div>
 @endif

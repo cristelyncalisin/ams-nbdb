@@ -15,10 +15,9 @@
                 <tr>
                     <th>ID</th>
                     <th>Employee</th>
+                    <th>Position</th>
                     <th>Type</th>
                     <th>Division</th>
-                    <th>Date Hired</th>
-                    <th>Date Separated</th>
                     <th class="text-center">Is Active?</th>
                     <th class="text-center" title="Actions">
                         <i class="bx bx-menu"></i>
@@ -44,10 +43,9 @@
                                 </div>
                             </div>
                         </td>
+                        <td>{{ $employee->position }}</td>
                         <td>{{ $employee->personnel_type }}</td>
                         <td>{{ $employee->division }}</td>
-                        <td>{{\Carbon\Carbon::parse($employee->date_hired)->format('M. d, Y')}}</td>
-                        <td>{{$employee->date_separated ? \Carbon\Carbon::parse($employee->date_separated)->format('M. d, Y') : '-'}}</td>
                         <td class="text-center">
                             <input class="form-check-input" type="checkbox" disabled {{ $employee->is_active ? 'checked' : '' }}>
                         </td>
