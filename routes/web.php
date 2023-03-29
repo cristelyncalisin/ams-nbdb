@@ -64,6 +64,7 @@ Route::middleware(['auth'])->group(function() {
 
         Route::prefix('dtr')->group(function () {
             Route::get('/', [DTRController::class, 'index'])->name('attendance-dtr');
+            Route::get('/print', [DTRController::class, 'print'])->name('print-dtr');
         });
     });
 });

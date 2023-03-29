@@ -11,8 +11,7 @@ class AttendanceController extends Controller
 {
     public function index(Request $request)
     {
-        $time_entries = (new AttendanceService())
-            ->getAttendanceData($request, 'employees.last_name', 'asc');
+        $time_entries = (new AttendanceService())->getAttendanceData($request);
 
         $employees = Employee::select(
             'employee_id', 'last_name', 'first_name'
