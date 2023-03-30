@@ -85,7 +85,11 @@
                                         data-bs-toggle="modal" data-bs-target=".employee-modal"
                                         data-link="{{ route('employees-edit', [$employee->employee_id]) }}"
                                     ><i class="bx bx-edit-alt me-1"></i> Edit</a>
-                                    <a class="dropdown-item text-danger" href="javascript:void(0);"><i class="bx bx-trash me-1"></i> Delete</a>
+                                    <a  class="dropdown-item text-danger delete-employee-btn" 
+                                        href="#" 
+                                        data-bs-toggle="modal" data-bs-target=".delete-employee-modal"
+                                        data-link="{{ route('employees-delete', [$employee->employee_id]) }}"
+                                    ><i class="bx bx-trash me-1"></i> Delete</a>
                                 </div>
                             </div>
                         </td>
@@ -118,11 +122,30 @@
   </div>
 </div>
 
+<div class="modal fade delete-employee-modal" data-bs-backdrop="static" tabindex="-1">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content p-3 p-md-5">
+        
+    </div>
+  </div>
+</div>
+
 @endsection
 
 @section('page-script')
 <script>
     $(document).on('click', '.add-employee-btn, .edit-employee-btn', function(e) {
+        e.preventDefault();
+        let link = $(this).data('link');
+        $.ajax({
+            url: link,
+            success: function(response){
+                $('.modal-content').html(response);
+            }
+        });
+    });
+
+    $(document).on('click', '.delete-employee-btn', function(e) {
         e.preventDefault();
         let link = $(this).data('link');
         $.ajax({

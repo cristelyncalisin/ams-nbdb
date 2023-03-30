@@ -52,4 +52,20 @@ class EmployeeController extends Controller
         return redirect()->back()
             ->with('success', 'Employee successfully updated!');
     }
+
+    public function delete($employee_id)
+    {
+        $employee = Employee::where('employee_id', $employee_id)->first();
+
+        return view('pages.employees.delete-employee-modal', [
+            'employee' => $employee
+        ]);
+    }
+
+    public function destroy(Request $request, $employee_id)
+    {
+        Employee::where('employee_id', $employee_id)->delete();
+        return redirect()->back()
+            ->with('success', 'Employee successfully deleted!');
+    }
 }

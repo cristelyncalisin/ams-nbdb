@@ -70,9 +70,6 @@ class GFormController extends Controller
             $employee = Employee::where('employee_id', $employee_id)->first();
 
             if ($employee) {
-                Employee::where('employee_id', $employee_id)
-                    ->update(['email' => $email]);
-
                 $gform_check = GForm::where([
                     'employee_id' => $employee->employee_id,
                     'timestamp' => $timestamp

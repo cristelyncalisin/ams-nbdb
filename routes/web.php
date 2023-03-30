@@ -47,7 +47,8 @@ Route::middleware(['auth'])->group(function() {
         Route::post('/', [EmployeeController::class, 'store'])->name('employees-store');
         Route::get('/edit/{employee_id}', [EmployeeController::class, 'edit'])->name('employees-edit');
         Route::put('/update/{employee_id}', [EmployeeController::class, 'update'])->name('employees-update');
-        Route::delete('/delete/{employee_id}', [EmployeeController::class, 'delete'])->name('employees-delete');
+        Route::get('/delete/{employee_id}', [EmployeeController::class, 'delete'])->name('employees-delete');
+        Route::delete('/destroy/{employee_id}', [EmployeeController::class, 'destroy'])->name('employees-destroy');
     });
 
     Route::prefix('attendance')->group(function () {
