@@ -126,7 +126,7 @@
                     <i class="bx bxs-watch bx-xs"></i>
                 </span>Upload from Biometrics (.txt)
             </a></li>
-            <li>
+            <!-- <li>
                 <hr class="dropdown-divider">
             </li>
             <li>
@@ -141,7 +141,7 @@
                 <a class="dropdown-item" href="{{route('attendance-biometrics')}}">
                     <i class="bx bxs-watch bx-xs me-2"></i>From Biometrics
                 </a>
-            </li>
+            </li> -->
         </ul>
     </div>
 </div>

@@ -92,7 +92,7 @@
             </tr>
             <tr>
                 <td colspan="2" class="bold">Position:</td>
-                <td colspan="7" class="bold"></td>
+                <td colspan="7" class="bold">{{ $dtr['position'] }}</td>
             </tr>
             <tr>
                 <td colspan="2" class="bold">
