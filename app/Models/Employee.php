@@ -9,8 +9,14 @@ class Employee extends Model
 {
     use HasFactory;
 
-    protected $dates = [
-        'date_hired',
-        'date_separated'
+    protected $fillable = [
+        'employee_id',
+        'first_name',
+        'middle_name',
+        'last_name',
+        'email',
+        'division',
+        'position',
+        'personnel_type'
     ];
 }
