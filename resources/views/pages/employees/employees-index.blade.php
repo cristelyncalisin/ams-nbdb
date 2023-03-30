@@ -85,7 +85,7 @@
                                         data-bs-toggle="modal" data-bs-target=".employee-modal"
                                         data-link="{{ route('employees-edit', [$employee->employee_id]) }}"
                                     ><i class="bx bx-edit-alt me-1"></i> Edit</a>
-                                    <a  class="dropdown-item text-danger delete-employee-btn" 
+                                    <a  class="dropdown-item delete-employee-btn" 
                                         href="#" 
                                         data-bs-toggle="modal" data-bs-target=".delete-employee-modal"
                                         data-link="{{ route('employees-delete', [$employee->employee_id]) }}"
