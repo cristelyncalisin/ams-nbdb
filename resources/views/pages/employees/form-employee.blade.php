@@ -59,6 +59,9 @@
                 <option value="PRED" {{ $employee->division === 'PRED' ? 'selected' : '' }}>PRED</option>
                 <option value="AFSD" {{ $employee->division === 'AFSD' ? 'selected' : '' }}>AFSD</option>
                 <option value="CITD" {{ $employee->division === 'CITD' ? 'selected' : '' }}>CITD</option>
+                <option value="OD" {{ $employee->division === 'OD' ? 'selected' : '' }}>OD</option>
+                <option value="OED" {{ $employee->division === 'OED' ? 'selected' : '' }}>OED</option>
+                <option value="OC" {{ $employee->division === 'OC' ? 'selected' : '' }}>OC</option>
             </select>
         </div>
         <div class="col-12 col-md-6">
