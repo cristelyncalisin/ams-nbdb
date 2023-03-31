@@ -141,12 +141,12 @@
                         </td>
                         <td class="date_entry">
                             @if (!($time_entry->late == "0" || $time_entry->late == "00:00"))
-                                {{ $time_entry->late }}
+                                {{ \Carbon\Carbon::parse($time_entry->late)->format('G\h i\m') }}
                             @endif
                         </td>
                         <td class="date_entry">
                             @if (!($time_entry->undertime == "0" || $time_entry->undertime == "00:00"))
-                                {{ $time_entry->undertime }}
+                                {{ \Carbon\Carbon::parse($time_entry->undertime)->format('G\h i\m') }}
                             @endif
                         </td>
                         <td class="date_entry">{{ $time_entry->time_out ?  '' : 'No Time out' }}</td>
@@ -167,8 +167,12 @@
             @endwhile
             <tr>
                 <td colspan="6" class="text-right total bold">TOTAL</td>
-                <td class="total">{{ $dtr['total_late'] }}</td>
-                <td class="total">{{ $dtr['total_ut'] }}</td>
+                <td class="total">
+                    {{ !empty($dtr['total_late']) ? \Carbon\Carbon::parse($dtr['total_late'])->format('G\h i\m') : '' }}
+                </td>
+                <td class="total">
+                    {{ !empty($dtr['total_ut']) ? \Carbon\Carbon::parse($dtr['total_ut'])->format('G\h i\m') : '' }}
+                </td>
                 <td></td>
             </tr>
             <tr>

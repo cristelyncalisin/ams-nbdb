@@ -19,11 +19,11 @@ class UserSeeder extends Seeder
         // User::factory(5)->create();
         $data = [
             [
-                'first_name' => 'John',
-                'middle_name' => 'Sample',
-                'last_name' => 'Doe',
-                'email' =>  'jsdoe@books.gov.ph',
-                'username' => 'jsdoe',
+                'first_name' => 'Kim Edward',
+                'middle_name' => null,
+                'last_name' => 'Ilagan',
+                'email' =>  'keilagan@books.gov.ph',
+                'username' => 'keilagan',
                 'password' => Hash::make('password123**'),
                 'role' => 'Admin',
                 'is_active' => 1

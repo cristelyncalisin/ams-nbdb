@@ -31,14 +31,14 @@
                                 <td>{{ $time_entry->time_out ? \Carbon\Carbon::parse($time_entry->time_out)->format('h:i A') : '-' }}</td>
                                 <td>
                                     @if (!($time_entry->late == "0" || $time_entry->late == "00:00"))
-                                        {{ $time_entry->late }}
+                                        {{ \Carbon\Carbon::parse($time_entry->late)->format('G\h i\m') }}
                                     @else
                                         -
                                     @endif
                                 </td>
                                 <td>
                                     @if (!($time_entry->undertime == "0" || $time_entry->undertime == "00:00"))
-                                        {{ $time_entry->undertime }}
+                                        {{ \Carbon\Carbon::parse($time_entry->undertime)->format('G\h i\m') }}
                                     @else
                                         -
                                     @endif
