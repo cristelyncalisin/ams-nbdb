@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('employees', function (Blueprint $table) {
-            $table->enum('division', [ 'BTTD', 'PRED', 'AFSD', 'CITD' ])
+            $table->enum('division', [ 'BTTD', 'PRED', 'AFSD', 'CITD', 'OD', 'OED', 'OC' ])
                 ->after('email');
         });
     }

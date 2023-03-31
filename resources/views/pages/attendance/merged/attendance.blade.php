@@ -63,6 +63,12 @@
                                             {{ request()->query('division') == 'AFSD'? 'selected' : '' }}>AFSD</option>
                                         <option value="CITD" 
                                             {{ request()->query('division') == 'CITD'? 'selected' : '' }}>CITD</option>
+                                        <option value="OD"
+                                            {{ request()->query('division') == 'OD'? 'selected' : '' }}>OD</option>
+                                        <option value="OED" 
+                                            {{ request()->query('division') == 'OED'? 'selected' : '' }}>OED</option>
+                                        <option value="OC" 
+                                            {{ request()->query('division') == 'OC'? 'selected' : '' }}>OC</option>
                                     </select>
                                 </div>
                             </div>
