@@ -5,14 +5,10 @@
       © <script>
         document.write(new Date().getFullYear())
 
-      </script>
-      , made with ❤️ by <a href="{{ (!empty(config('variables.creatorUrl')) ? config('variables.creatorUrl') : '') }}" target="_blank" class="footer-link fw-bolder">{{ (!empty(config('variables.creatorName')) ? config('variables.creatorName') : '') }}</a>
+      </script> <a href="#" target="_blank" class="footer-link fw-bolder ms-1">Attendance Management System</a>
     </div>
     <div>
-      <a href="{{ config('variables.licenseUrl') ? config('variables.licenseUrl') : '#' }}" class="footer-link me-4" target="_blank">License</a>
-      <a href="{{ config('variables.moreThemes') ? config('variables.moreThemes') : '#' }}" target="_blank" class="footer-link me-4">More Themes</a>
-      <a href="{{ config('variables.documentation') ? config('variables.documentation') : '#' }}" target="_blank" class="footer-link me-4">Documentation</a>
-      <a href="{{ config('variables.support') ? config('variables.support') : '#' }}" target="_blank" class="footer-link d-none d-sm-inline-block">Support</a>
+      <a href="https://books.gov.ph" class="footer-link" target="_blank">National Books Development Board</a>
     </div>
   </div>
 </footer>
