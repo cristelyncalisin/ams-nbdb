@@ -166,12 +166,16 @@
                 @endphp
             @endwhile
             <tr>
+                @php
+                  $total_late = !empty($dtr['total_late']) ? explode(":", $dtr['total_late']) : [];
+                  $total_ut = !empty($dtr['total_ut']) ? explode(":", $dtr['total_ut']) : [];
+                @endphp
                 <td colspan="6" class="text-right total bold">TOTAL</td>
                 <td class="total">
-                    {{ !empty($dtr['total_late']) ? \Carbon\Carbon::parse($dtr['total_late'])->format('G\h i\m') : '' }}
+                    {{ !empty($total_late) ? $total_late[0] . 'h ' . $total_late[1] . 'm' : '' }}
                 </td>
                 <td class="total">
-                    {{ !empty($dtr['total_ut']) ? \Carbon\Carbon::parse($dtr['total_ut'])->format('G\h i\m') : '' }}
+                    {{ !empty($total_ut) ? $total_ut[0] . 'h ' . $total_ut[1] . 'm' : '' }}
                 </td>
                 <td></td>
             </tr>
