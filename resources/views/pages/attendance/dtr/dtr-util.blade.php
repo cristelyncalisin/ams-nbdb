@@ -35,13 +35,13 @@
                                 <label for="exampleFormControlSelect1" class="form-label">Select Division:</label>
                                 <select class="form-select" name="division" aria-label="Default select example">
                                     <option value="" {{ empty(request()->query('division')) ? 'selected' : '' }}>All Divisions</option>
-                                    <option value="BTTD" {{ request()->query('division') == 'BTTD' ? 'selected' : '' }}>BTTD</option>
-                                    <option value="PRED" {{ request()->query('division') == 'PRED'? 'selected' : '' }}>PRED</option>
-                                    <option value="AFSD" {{ request()->query('division') == 'AFSD'? 'selected' : '' }}>AFSD</option>
-                                    <option value="CITD" {{ request()->query('division') == 'CITD'? 'selected' : '' }}>CITD</option>
-                                    <option value="OD" {{ request()->query('division') == 'OD'? 'selected' : '' }}>OD</option>
-                                    <option value="OED" {{ request()->query('division') == 'OED'? 'selected' : '' }}>OED</option>
-                                    <option value="OC" {{ request()->query('division') == 'OC'? 'selected' : '' }}>OC</option>
+                                    <option value="OOGB" {{ request()->query('division') == 'OOGB'? 'selected' : '' }}>OOGB</option>
+                                    <option value="OOED" {{ request()->query('division') == 'OOED'? 'selected' : '' }}>OOED</option>
+                                    <option value="AFMD" {{ request()->query('division') == 'AFMD'? 'selected' : '' }}>AFMD</option>
+                                    <option value="PIRD" {{ request()->query('division') == 'PIRD'? 'selected' : '' }}>PIRD</option>
+                                    <option value="READ" {{ request()->query('division') == 'READ'? 'selected' : '' }}>READ</option>
+                                    <option value="CPDD" {{ request()->query('division') == 'CPDD'? 'selected' : '' }}>CPDD</option>
+                                    <option value="INDD" {{ request()->query('division') == 'INDD'? 'selected' : '' }}>INDD</option>
                                 </select>
                             </div>
                         </div>
