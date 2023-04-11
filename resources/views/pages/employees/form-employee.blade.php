@@ -55,13 +55,13 @@
             <label class="form-label" for="division">Division</label>
             <select id="division" name="division" class="form-select" aria-label="Default select example" required>
                 <option selected disabled value>Division</option>
-                <option value="BTTD" {{ $employee->division === 'BTTD' ? 'selected' : '' }}>BTTD</option>
-                <option value="PRED" {{ $employee->division === 'PRED' ? 'selected' : '' }}>PRED</option>
-                <option value="AFSD" {{ $employee->division === 'AFSD' ? 'selected' : '' }}>AFSD</option>
-                <option value="CITD" {{ $employee->division === 'CITD' ? 'selected' : '' }}>CITD</option>
-                <option value="OD" {{ $employee->division === 'OD' ? 'selected' : '' }}>OD</option>
-                <option value="OED" {{ $employee->division === 'OED' ? 'selected' : '' }}>OED</option>
-                <option value="OC" {{ $employee->division === 'OC' ? 'selected' : '' }}>OC</option>
+                <option value="OOGB" {{ $employee->division === 'OOGB' ? 'selected' : '' }}>OOGB</option>
+                <option value="OOED" {{ $employee->division === 'OOED' ? 'selected' : '' }}>OOED</option>
+                <option value="AFMD" {{ $employee->division === 'AFMD' ? 'selected' : '' }}>AFMD</option>
+                <option value="PIRD" {{ $employee->division === 'PIRD' ? 'selected' : '' }}>PIRD</option>
+                <option value="READ" {{ $employee->division === 'READ' ? 'selected' : '' }}>READ</option>
+                <option value="CPDD" {{ $employee->division === 'CPDD' ? 'selected' : '' }}>CPDD</option>
+                <option value="INDD" {{ $employee->division === 'INDD' ? 'selected' : '' }}>INDD</option>
             </select>
         </div>
         <div class="col-12 col-md-6">
