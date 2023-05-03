@@ -66,7 +66,7 @@ class GFormController extends Controller
             $email = trim($rowProperties['Email Address']);
             $timestamp = trim($rowProperties['Timestamp']->format('Y-m-d H:i:s'));
             
-            $employee_id = $rowProperties['Plantilla ID No.'] ?? $rowProperties['JO/COS ID No.'];
+            $employee_id = $rowProperties['Plantilla ID No. (SKIP this part if \"Not Applicable\")'] ?? $rowProperties['Job Order/COS ID No. (SKIP this part if \"Not Applicable\")'];
             $employee = Employee::where('employee_id', $employee_id)->first();
 
             if ($employee) {
