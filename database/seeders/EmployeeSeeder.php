@@ -102,7 +102,7 @@ class EmployeeSeeder extends Seeder
                 'middle_name' => null,
                 'last_name' => $last_name,
                 'email' => fake()->unique()->safeEmail(),
-                'division' => Arr::random([ 'BTTD', 'PRED', 'AFSD', 'CITD' ]),
+                'division' => Arr::random([ 'OOGB','OOED','AFMD','PIRD','READ','CPDD','INDD' ]),
                 'position' => null,
                 'personnel_type' => 'Plantilla',
                 'is_active' => 1
@@ -118,7 +118,7 @@ class EmployeeSeeder extends Seeder
                 'middle_name' => null,
                 'last_name' => $last_name_jo,
                 'email' => fake()->unique()->safeEmail(),
-                'division' => Arr::random([ 'BTTD', 'PRED', 'AFSD', 'CITD' ]),
+                'division' => Arr::random([ 'OOGB','OOED','AFMD','PIRD','READ','CPDD','INDD' ]),
                 'position' => null,
                 'personnel_type' => 'COS/JO',
                 'is_active' => 1
