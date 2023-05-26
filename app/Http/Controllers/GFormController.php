@@ -54,7 +54,7 @@ class GFormController extends Controller
 
         $path = storage_path('app/gforms/tmp/' . $file->folder . '/' . $file->filename);
         $reader = SimpleExcelReader::create($path)->fromSheet(1);
-        
+        // dd($reader->getHeaders());
         if ($reader->getHeaders()[0] !== "Timestamp") {
             return redirect()
                 ->back()
@@ -66,7 +66,12 @@ class GFormController extends Controller
             $email = trim($rowProperties['Email Address']);
             $timestamp = trim($rowProperties['Timestamp']->format('Y-m-d H:i:s'));
             
-            $employee_id = $rowProperties['Plantilla ID No. (SKIP this part if "Not Applicable")'] ?? $rowProperties['Job Order/COS ID No. (SKIP this part if "Not Applicable")'];
+            $plantilla_header = 'Plantilla ID No. (SKIP this part if "Not Applicable")';
+            $cos_jo_header = 'Job Order/COS ID No. (SKIP this part if "Not Applicable")';
+            $employee_id = !empty($rowProperties[$plantilla_header]) 
+                ? $rowProperties[$plantilla_header] 
+                : $rowProperties[$cos_jo_header];
+                
             $employee = Employee::where('employee_id', $employee_id)->first();
 
             if ($employee) {
